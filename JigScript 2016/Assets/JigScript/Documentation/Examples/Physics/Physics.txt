@@ -1,0 +1,20 @@
+//Physics.txt
+//Demonstrates how use AddForce in a scene where the physics
+//and colliders are already setup. For an example, where
+//the physics needs to be setup first see GORAF1.TXT in the
+//Tests folder.
+
+//Enable physics not requried as rigidbody added to model in scene.
+
+UIControls.Label(UIControls.Top, true, "Press w", UIScreen.width/2-30, 0, 100, 30);
+GameObjects.Rigidbody.Set(middle, "useGravity", true);
+GameObjects.Rigidbody.Set(middle, "isKinematic", false);
+
+whens.enable = true;
+
+
+when( Inputs.Key("w") )
+{
+    GameObjects.Rigidbody.AddForce(middle, 0, 100, 0);
+}
+	

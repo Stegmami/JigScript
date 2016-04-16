@@ -1,0 +1,46 @@
+
+UIControls.Label(UIControls.XY, true, "Screen Width = ", 100, 100, 100, 20);
+UIControls.Label(UIControls.XY, true, "Screen Height = ", 100, 120, 100, 20);
+UIControls.Label(UIControls.XY, true, "FullScreen = ", 100, 140, 100, 20);
+
+
+
+var width  = UIControls.Label(UIControls.XY, true, UIScreen.width, 200, 100, 100, 20);
+var height = UIControls.Label(UIControls.XY, true, UIScreen.height, 200, 120, 100, 20);
+
+var fullScreen = UIControls.Label(UIControls.XY, true, UIScreen.fullScreen, 200, 140, 100, 20);
+
+//Set resolution only works in run mode. Unity 3d enforces this by design.
+var setButton = UIControls.Button(UIControls.XY, true, "Set 1024x768", 99, 165, 140, 20);
+
+//print the supported resolutions.
+var res;
+res[UIScreen.supported.width.length] = 0;
+res[0] = UIScreen.supported.width[0];
+
+res[0] = res[0] + "x";
+res[0] = res[0] + UIScreen.supported.height[0];
+
+print(res[0]);
+
+whens.enable = true;
+
+when( setButton.clicked )
+{
+    UIScreen.SetResolution(1024, 768, false);
+}
+
+when( UIScreen.fullScreen )
+{
+    fullScreen.content = UIScreen.fullScreen;
+}
+
+when( UIScreen.width )
+{
+    width.content = UIScreen.width;
+}
+
+when( UIScreen.height )
+{
+    height.content = UIScreen.height;
+}

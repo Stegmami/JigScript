@@ -1,0 +1,20 @@
+
+var ax1 = 22;
+
+print("ax1 is " + ax1);
+
+print("ax1 saved as ax1Saved");
+
+save("ax1Saved", ax1);
+
+ax1 = 11;
+
+print("ax1 changed to " + ax1);
+
+Timers.Wait(1.25f);
+
+print("loading ax1");
+
+ax1 = load("ax1");
+
+print("ax1 loaded is " + ax1);

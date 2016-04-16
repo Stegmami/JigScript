@@ -1,0 +1,25 @@
+GameObjects.Clear();
+
+var player = GameObjects.Create(myCapsule);
+
+var gameObjectArray;
+
+gameObjectArray[1] = player;
+
+if(gameObjectArray[1] == player)
+{
+	print(("" + gameObjectArray[1]) + (" is the same as " + player));
+}
+else
+{
+	print(("" + gameObjectArray[1]) + (" is not the same as " + player));
+}
+
+if(myCapsule == player)
+{
+	print(("" + myCapsule) + (" is the same as " + player));
+}
+else
+{
+	print(("" + myCapsule) + (" is not the same as " + player));
+}

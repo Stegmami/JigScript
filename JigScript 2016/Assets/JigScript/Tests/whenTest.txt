@@ -1,0 +1,53 @@
+
+GameObjects.Clear();
+
+UIControls.Label(UIControls.CenterHorizontal, true, "Press WASD", 0, 0, 100, 30);
+
+
+var enemy = GameObjects.Create(Enemy.Field);
+
+GameObjects.MoveTo(enemy, MoveTo.Absolute, 0, 0, 0, 0);
+GameObjects.ScaleTo(enemy, ScaleTo.Relative, 2, 3, 3, 2);
+
+global toggle.On = 1;
+global toggle.Off = 2;
+global toggle = toggle.On;
+
+var smoothness = 0.1f;
+
+whens.enable = true;
+
+//this must be set to flag the first when as unchecked
+toggle = toggle.On;
+
+//if the for loops are commented out, the whens stop working
+when ( toggle == toggle.On )
+{
+	toggle = toggle.Off;
+}
+
+when ( toggle == toggle.Off )
+{
+	toggle = toggle.On;
+}
+
+when(Inputs.GetButton("Vertical"))
+{
+	var y = Inputs.GetAxis("Vertical");
+	var x = Inputs.GetAxis("Horizontal");
+	
+	GameObjects.MoveTo(enemy, MoveTo.Relative, smoothness, x, y, 0);
+}
+
+when(Inputs.GetButton("Horizontal"))
+{
+	var x = Inputs.GetAxis("Horizontal");
+	var y = Inputs.GetAxis("Vertical");
+	
+	GameObjects.MoveTo(enemy, MoveTo.Relative, smoothness, x, y, 0);
+}
+
+when(Inputs.GetButton("Fire1"))
+{
+	print("Fire!");
+}

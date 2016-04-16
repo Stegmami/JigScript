@@ -1,0 +1,12 @@
+var array;
+
+array[1] = UIControls.Box(UIControls.CenterVertical, false, "This is a box.", 0, 0, 200, 50);
+array[2] = UIControls.Box(UIControls.CenterVertical, false, "This is another box.", 300, 0, 200, 150);
+
+//Show all box controls.
+array[0].show = true;
+
+Timers.Wait(1.0f);
+
+//Change the content of all box controls to the picture.
+array[0].content = picture;

@@ -1,0 +1,16 @@
+
+var button = UIControls.Button(UIControls.XY, true, "Click me", 150, 150, 100, 100);
+
+Timers.Wait(1.0f);
+button.content = "CLICK ME!";
+
+whens.enable = true;
+
+Timers.Wait(15.0f);
+button.show = false;
+
+when(button.clicked)
+{
+    button.content = NK;
+}
+

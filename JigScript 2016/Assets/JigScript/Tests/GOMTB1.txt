@@ -1,0 +1,23 @@
+
+
+GameObjects.MoveTo(enemy, MoveTo.Absolute, 1, -1, 0, 0);
+
+Timers.Wait(1);
+
+GameObjects.MoveTo(enemy, MoveTo.Relative, 1, 1, 0, 0);
+
+Timers.Wait(1);
+
+GameObjects.ScaleTo(enemy, ScaleTo.Absolute, 1, 5, 5, 5);
+
+Timers.Wait(1);
+
+GameObjects.ScaleTo(enemy, ScaleTo.Relative, 1, 2.5, 2.5, 2.5);
+
+Timers.Wait(1);
+
+GameObjects.RotateTo(enemy, RotateTo.Absolute, 1, 90, 0, 0);
+
+Timers.Wait(1);
+
+GameObjects.RotateTo(enemy, RotateTo.Relative, 1, 0, 90, 0);

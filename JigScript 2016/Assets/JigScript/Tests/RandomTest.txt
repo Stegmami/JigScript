@@ -1,0 +1,4 @@
+print( Random(1, 100) );
+print( Random(1.1, 2.2) );
+print( Random(100, 200);
+

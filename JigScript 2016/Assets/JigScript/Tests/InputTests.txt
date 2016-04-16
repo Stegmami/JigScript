@@ -1,0 +1,24 @@
+
+UIControls.Label(UIControls.Top, true, "Press w, left click or a or d", UIScreen.width/2-100, 0, 100, 130);
+
+whens.enable = true;
+
+when( Inputs.GetButton("Fire1") )
+{
+    print(  "Fire" );
+}
+
+when( Inputs.GetAxis("Horizontal") )
+{
+    print("Horizontal Axis");
+}
+
+when( Inputs.Key("w") )
+{
+   print("w");
+}
+
+when( Inputs.Any() )
+{
+   print("The user is doing something!");
+}

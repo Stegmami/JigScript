@@ -1,0 +1,17 @@
+var items;
+
+for(var ii=0; ii<100; ++ii)
+{
+    items[ii] = "Line " + ii;
+}
+
+var list = UIControls.List(UIControls.XY, true, items[0], 300, 270, 150, 100);
+
+list[2].content = metal;
+
+whens.enable = true;
+
+when( list.selected )
+{
+	print( list[list.index].content );
+}

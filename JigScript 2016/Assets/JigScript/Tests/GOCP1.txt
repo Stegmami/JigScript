@@ -1,0 +1,20 @@
+GameObjects.Clear();
+
+var enemy1 = GameObjects.Create(enemy);
+var enemy2 = GameObjects.Create(enemy);
+
+GameObjects.MoveTo(enemy1, MoveTo.Absolute, 0, 0, 6, 50);
+GameObjects.MoveTo(enemy2, MoveTo.Absolute, 0, 0, 6, 70);
+
+print(GameObjects.ComparePositions(enemy1, enemy2);
+
+GameObjects.MoveTo(enemy2, MoveTo.Absolute, 1, 0, 6, 49.5);
+
+for(var ii=0; ii<10; ++ii)
+{
+    print( GameObjects.GetDistance(enemy1, enemy2) );
+    Timers.Wait(.1f);
+}
+
+print(GameObjects.ComparePositions(enemy1, enemy2);
+

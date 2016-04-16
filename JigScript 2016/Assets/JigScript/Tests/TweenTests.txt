@@ -1,0 +1,44 @@
+GameObjects.MoveTo(cherries[1], Tween.Absolute, 3.5f, 6, 1, 0);
+GameObjects.ScaleTo(cherries[1], Tween.Absolute, 3.5f, 3, 1, 1);
+GameObjects.RotateTo(cherries[1], Tween.Relative, .5f, 0, 0, 90);
+Timers.Wait(1.0f);
+GameObjects.RotateTo(cherries[1], Tween.Relative, .5f, 0, 0, 90);
+Timers.Wait(3.5f);
+
+GameObjects.Reset();
+
+cherries[1].px = 2;
+GameObjects.MoveTo(cherries[0], Tween.Absolute, 1.0f, 6, 1, 0);
+Timers.Wait(1.0f);
+
+GameObjects.Reset();
+
+cherries.px = 2;
+
+whens.enable = true;
+
+GameObjects.MoveTo(cherries[2], Tween.Absolute, 1.0f, -5, 2, 0);
+
+when( cherries[2].MoveComplete )
+{
+    GameObjects.RotateTo(cherries[2], Tween.Relative, .5f, 0, 0, -180);
+}
+
+GameObjects.Reset();
+
+
+var vv = GameObjects.Create(cherries);
+vv.px = 2;
+vv.collision = true;
+cherries[1].collision = true;
+
+cherries[2].active = false;
+
+
+GameObjects.MoveTo(vv, Tween.Absolute, .25f, 0, 0, 0);
+
+when( vv[1].collision == true )
+{
+    GameObjects.MoveTo(vv.other, Tween.Relative, 1.0f, -5, 0, 0);
+}
+

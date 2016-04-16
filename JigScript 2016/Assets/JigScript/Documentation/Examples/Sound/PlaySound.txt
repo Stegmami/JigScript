@@ -1,0 +1,23 @@
+var longSound = Sounds.Create("Sounds/long");
+var shortSound = Sounds.Create("Sounds/short");
+
+longSound.volume = .5f;
+longSound.pitch = 1.0f;
+longSound.loop = true;
+longSound.play = true;
+Timers.Wait(1.0f);
+
+whens.enable = true;
+
+for(var ii=0; ii<10; ++ii)
+{
+    shortSound.play = true;
+    Timers.Wait(1.0f);
+}
+
+longSound.play = false;
+
+when( shortSound.play == true )
+{
+    print("Bang!");
+}

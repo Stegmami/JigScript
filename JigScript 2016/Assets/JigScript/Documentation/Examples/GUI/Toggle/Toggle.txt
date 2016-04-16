@@ -1,0 +1,17 @@
+//Demonstrates a toggle button.
+
+var toggle = UIControls.Toggle(UIControls.XY, true, "Toggle Button", 150, 180, 200, 32);
+
+whens.enable = true;
+
+when( toggle.changed )
+{
+	if ( toggle.content )
+    {
+        toggle.content = "TOGGLE BUTTON";
+    }
+    else
+    {
+        toggle.content = "Toggle Button";
+    }
+}

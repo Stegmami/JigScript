@@ -1,0 +1,27 @@
+var test;
+
+var ii=0;
+whens.enable = true;
+
+print("Testing default");
+for(ii=0; ii<10; ++ii)
+{
+    Timers.Wait(.1f);
+}
+
+
+print("Testing No whens");
+Timers.Wait(1.0f, false);
+
+print("Testing whens");
+for(ii=0; ii<10; ++ii)
+{
+    Timers.Wait(.1f, true);
+}
+
+whens.enable = false;
+
+when( ii < 11)
+{
+    print( test + ii );
+}

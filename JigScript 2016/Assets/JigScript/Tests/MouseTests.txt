@@ -1,0 +1,38 @@
+
+GameObjects.SetMinDragDistance(clickie, 2.0f);
+
+whens.enable = true;
+
+clickie.clickable = true;
+
+when( clickie.clicked )
+{
+    print("clicked");
+}
+
+when( clickie.selected )
+{
+    print("selected");
+}
+
+when( clickie.dragBegin )
+{
+    print("drag begin " + GameObjects.MousePosition(clickie));
+}
+
+when( clickie.dragEnd )
+{
+    print("drag end " + GameObjects.MousePosition(clickie));
+}
+
+var once = false;
+
+when( clickie.dragging )
+{
+    print("dragging");
+}
+
+when( clickie.hover )
+{
+    print("over");
+}

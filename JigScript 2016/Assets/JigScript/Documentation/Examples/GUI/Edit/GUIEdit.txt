@@ -1,0 +1,13 @@
+
+var edit = UIControls.Edit(UIControls.XY, true, "Edit This Text", 150, 150, 100, 32);
+
+Timers.Wait(1.0f);
+
+edit.content = "type here";
+
+whens.enable = true;
+
+when( edit.changed )
+{
+    print(edit.content);
+}

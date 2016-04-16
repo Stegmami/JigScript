@@ -1,0 +1,20 @@
+//Physics.txt
+//Demonstrates how to setup phyics and use add force.
+
+
+//Enable physics
+top.physics = true;
+enemy.physics = true;
+BottomRow[0].physics = true;
+
+UIControls.Label(UIControls.Top, true, "Press w", UIScreen.width/2-30, 0, 100, 30);
+GameObjects.Rigidbody.Set(enemy, "useGravity", true);
+GameObjects.Rigidbody.Set(enemy, "isKinematic", false);
+
+whens.enable = true;
+
+
+when( Inputs.Key("w") )
+{
+    GameObjects.Rigidbody.AddForce(enemy, 0, 100, 0);
+}

@@ -1,0 +1,35 @@
+JigScript
+
+Version 1.00.04
+
+1 - Collider’s, click, and Rigidbody components are no longer added immediately when the game object is imported. This was causing empty game objects to receive collisions. This means that you must explicitly set an object to use physics or collision if it does not have these components.
+
+2 - Properties were added for MoveComplete, ScaleComplete, RotateComplete. Using properties in when() statements is much more efficient because the run time engine can detect when the property has been changed. The GameObjects functions that checked for move, scale and rotate will be removed at some point in the future. You should use the property versions in any new work that you create.
+
+3 - When statement variables are now reference counted. If multiple when() statements were using the same variable then only the first one was being signaled. Reference counting solved this issue.
+
+4 - Added example scene Physics showing how to use JigScript and physics with 3D models where the physics is setup in the scene and does not need to be enabled via scripting.
+
+5 - The following physics properties have been added and are currently being tested. Once the testing is complete they will be documented and be ok to use in your games. You can experiment with them if you like. Should you do so please let us know about any issues that you encounter and we will address them. The parameters passed to these functions are identical to the Set physics GameObjects function.
+
+PhysicsAngularDrag
+PhysicsAngularVelocity
+PhysicsSetcenterOfMass
+PhysicsSetCollisionDetectionMode
+PhysicsConstraints
+PhysicsDetectCollisions
+PhysicsDrag
+PhysicsFreezeRotation
+PhysicsInertiaTensor
+PhysicsInterpolation
+PhysicsIsKinematic
+PhysicsMass
+PhysicsMaxAngularVelocity
+PhysicsPosition
+PhysicsRotation
+PhysicsSleepAngularVelocity
+PhysicsSleepVelocity
+PhysicsSolverIterationCount
+PhysicsUseConeFriction
+PhysicsUseGravity
+PhysicsVelocity

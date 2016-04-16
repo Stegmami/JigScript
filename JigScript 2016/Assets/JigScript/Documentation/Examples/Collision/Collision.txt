@@ -1,0 +1,15 @@
+//Collision shows how to blow up an object on collision.
+whens.enable = true;
+
+Squid.collision = true;
+Blob.collision = true;
+
+GameObjects.MoveTo(Squid, MoveTo.Absolute, 2.0f, Blob.Sprite.px, 0, 0);
+
+when( Squid.collision )
+{
+    GameObjects.MoveTo(Squid, MoveTo.Absolute, 1.0f, 0, 0, 0);
+	GameObjects.Animator.SetBool(Blob.Sprite, "Shrink", true);
+	Timers.Wait(.15f);
+    Blob.Explode.active = true;
+}

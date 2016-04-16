@@ -1,0 +1,119 @@
+
+var v = cubef.other;
+
+
+print("position");
+//Position tests
+cubef.px = 0;
+cubef.py = 0;
+cubef.pz = 0;
+cubef.sx = 1;
+cubef.sy = 1;
+cubef.sz = 1;
+cubef.rx = 1;
+cubef.ry = 1;
+cubef.rz = 1;
+
+Timers.Wait(1.0f);
+cubef.px = 2.0;
+Timers.Wait(1.25f);
+cubef.py = .5;
+Timers.Wait(1.25f);
+cubef.pz = 1.5;
+
+print(cubef.px);
+print(cubef.py);
+print(cubef.pz);
+
+//Rotation tests
+print("rotation");
+
+cubef.px = 0;
+cubef.py = 0;
+cubef.pz = 0;
+
+cubef.rx = 30;
+Timers.Wait(1.0f);
+cubef.ry = 45;
+Timers.Wait(1.0f);
+cubef.rz = 60;
+
+print(cubef.rx);
+print(cubef.ry);
+print(cubef.rz);
+
+print("scale");
+//Scale tests
+cubef.sx = 1;
+cubef.sy = 1;
+cubef.sz = 1;
+
+Timers.Wait(1.0f);
+cubef.sx = 4.0;
+Timers.Wait(1.25f);
+cubef.sy = 4.0;
+Timers.Wait(1.25f);
+cubef.sz = 4.0;
+
+print("material");
+cubef.material = JigMaterialRed;
+cubef.material = JigMaterialBlue;
+
+print("resetting");
+//Position tests
+cubef.px = 0;
+cubef.py = 0;
+cubef.pz = 0;
+cubef.sx = 1;
+cubef.sy = 1;
+cubef.sz = 1;
+cubef.rx = 1;
+cubef.ry = 1;
+cubef.rz = 1;
+
+whens.enable = true;
+
+print("checking collision");
+cubef.collision = true;
+cubey.collision = true;
+
+GameObjects.MoveTo(cubef, MoveTo.Absolute, 1.0f, 6, 0, 0);
+
+when( cubef.collision )
+{
+    print("collision");
+}
+
+when( cubef.collision )
+{
+    print("collision");
+}
+
+cubef.clickable = true;
+print("click now");
+
+when( cubef.dragBegin )
+{
+    print("drag begin");
+}
+
+when( cubef.selected )
+{
+    print("selected");
+}
+
+when( cubef.dragging )
+{
+    print("dragging");
+}
+
+when( cubef.dragEnd )
+{
+    print("drag end");
+}
+
+when( cubef.hover )
+{
+    print("hover");
+}
+
